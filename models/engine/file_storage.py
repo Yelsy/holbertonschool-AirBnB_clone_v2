@@ -66,12 +66,6 @@ class FileStorage:
             pass
 
     def close(self):
-        """Calls reload method to deserialize the JSON file to objects"""
+        """ call reload method for
+        deserializing the JSON file to objects """
         self.reload()
-
-    def delete(self, obj=None):
-        """Deletes obj from __objects if it's inside"""
-        if obj is not None:
-            key = obj.__class__.__name__ + '.' + obj.id
-            if key in self.all():
-                del self.all()[key]

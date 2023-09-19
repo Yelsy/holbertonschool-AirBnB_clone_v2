@@ -74,5 +74,5 @@ class DBStorage:
         self.__session = Session()
 
     def close(self):
-        """ Log out of the database """
+        """ Log out of the database"""
         self.__session.close()

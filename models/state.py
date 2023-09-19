@@ -23,8 +23,8 @@ else:
         if getenv('HBNB_TYPE_STORAGE') != 'db':
             @property
             def cities(self):
-                """Getter attribute para devolver la lista de objetos
-                City vinculados al Estado actual
+                """Getter attribute to return  the obj list of cities
+                relashionship of current state
                 """
                 city_list = []
                 for city in models.storage.all(City).values():

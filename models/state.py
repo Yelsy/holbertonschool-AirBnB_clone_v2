@@ -20,14 +20,12 @@ else:
         """ State class """
         name = ""
 
-        if getenv('HBNB_TYPE_STORAGE') != 'db':
-            @property
-            def cities(self):
-                """Getter attribute to return  the obj list of cities
-                relashionship of current state
-                """
-                city_list = []
-                for city in models.storage.all(City).values():
-                    if city.state_id == self.id:
-                        city_list.append(city)
-                return city_list
+        @property
+        def cities(self):
+            from models.city import City
+            new_list_cities = []
+            for city in models.storage.all(City).values():
+                if city.state_id == self.id:
+                    new_list_cities.append(city)
+
+            return new_list_cities
